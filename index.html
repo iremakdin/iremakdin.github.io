@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irem Simsar - Psikolojik Danışmanlık</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- İkonlar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* RENK PALETİ: SICAK MAVİ + KOYU VİZON KREM */
+                        'ocean-primary': '#2A6F7B', /* Ana Renk: Sıcak Petrol Mavisi */
+                        'ocean-dark': '#1D525E',    /* Daha koyu tonu */
+                        'sand-bg': '#E0D0C1',       /* YENİ: Arka plan artık buton rengiyle (Vizon) aynı */
+                        'soft-cream': '#E0D0C1',    /* VURGU: Vizon/Bej tonu (Arka planla aynı) */
+                        'text-main': '#334155',     /* Metin: Koyu Arduvaz Grisi */
+                        'pure-white': '#ffffff',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        /* Yumuşak geçişler */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            padding-bottom: 0;
+            border-bottom-width: 0;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 40;
+        }
+        #mobile-menu.open {
+            max-height: 320px;
+            padding-bottom: 1rem; /* Tailwind pb-4 */
+            border-bottom-width: 1px;
+        }
+    </style>
+</head>
+<body class="bg-sand-bg text-text-main font-sans antialiased">
+
+    <!-- NAVİGASYON -->
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-sand-bg sticky top-0 z-50 shadow-sm/10 backdrop-blur-md bg-opacity-95 border-b border-ocean-primary/5">
+        <div class="text-ocean-primary tracking-wide">
+            <div class="text-2xl font-serif font-semibold">Irem Simsar</div>
+            <div class="text-xs font-sans uppercase opacity-80 -mt-1">Psikolojik Danışman</div>
+        </div>
+        
+        <!-- Desktop Menü -->
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-semibold text-ocean-primary items-center">
+            <a href="#hakkimda" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Hakkımda</a>
+            <a href="#hizmetler" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Hizmetler</a>
+            <a href="#iletisim" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">İletişim</a>
+            <div class="flex gap-2 ml-4">
+                <span class="px-3 py-1 text-xs bg-ocean-primary text-white rounded">TR</span>
+                <a href="en/index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded hover:bg-ocean-primary/20 transition-colors">EN</a>
+            </div>
+        </div>
+
+        <!-- Mobil Menü Butonu -->
+        <button onclick="toggleMenu()" class="md:hidden text-ocean-primary text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobil Menü İçeriği -->
+    <div id="mobile-menu" class="bg-sand-bg md:hidden flex flex-col items-center gap-4 pb-4 shadow-sm border-b border-ocean-primary/10">
+        <a href="#hakkimda" class="text-ocean-primary font-semibold py-2">Hakkımda</a>
+        <a href="#hizmetler" class="text-ocean-primary font-semibold py-2">Hizmetler</a>
+        <a href="#iletisim" class="text-ocean-primary font-semibold py-2">İletişim</a>
+        <div class="flex gap-2">
+            <span class="px-3 py-1 text-xs bg-ocean-primary text-white rounded">TR</span>
+            <a href="en/index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded">EN</a>
+        </div>
+    </div>
+
+    <!-- HERO BÖLÜMÜ (Giriş) -->
+    <header class="relative text-white px-6 py-24 md:py-36 text-center flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
+            style="background-image: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?q=80&w=1000&auto=format&fit=crop');">
+        
+        <!-- Renk Perdesi -->
+        <div class="absolute inset-0 bg-ocean-primary/80 mix-blend-multiply z-0"></div>
+
+        <!-- Hafif Işık Efektleri -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none z-0">
+             <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-soft-cream filter blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-3xl fade-in relative z-10">
+            <span class="text-xl md:text-2xl uppercase tracking-[0.15em] opacity-90 mb-8 block text-orange-50 font-medium">Psikolojik Danışmanlık</span>
+            <p class="text-3xl md:text-4xl opacity-95 mb-10 font-light max-w-2xl mx-auto leading-relaxed text-white font-serif">
+                Değişim için şefkatli, yargısız ve profesyonel bir alan.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#iletisim" class="inline-block bg-soft-cream hover:bg-[#d4c0ae] text-ocean-primary py-4 px-10 rounded-full text-sm font-bold uppercase tracking-widest transition-all transform hover:scale-105 shadow-lg cursor-pointer no-underline text-center">
+                    <i class="fas fa-calendar-check mr-2"></i>Randevu Planla
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HAKKIMDA BÖLÜMÜ -->
+    <section id="hakkimda" class="px-6 py-20 md:py-32 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
+            <!-- Görsel Alanı -->
+            <div class="w-full md:w-1/2 h-[400px] md:h-[550px] relative rounded-lg overflow-hidden shadow-2xl shadow-ocean-primary/10">
+                <img src="irem.jpg" 
+                     alt="Irem Simsar" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+            
+            <!-- Metin Alanı -->
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-serif text-ocean-primary mb-6">Merhaba, ben Irem.</h2>
+                <p class="mb-5 text-lg leading-relaxed text-text-main opacity-90">
+                    Genç yetişkin ve yetişkinlerle çalışan bir psikolog olarak, hayatın dönüm noktalarında, belirsizlikler karşısında ve kişisel gelişim yolculuğunuzda yanınızda olmak için buradayım.
+                </p>
+                <p class="mb-8 text-lg leading-relaxed text-text-main opacity-90">
+                    İsviçre'de tanınan yüksek lisans derecemle birlikte, hümanistik yaklaşım ve Somatic Experiencing® yöntemlerini kullanarak çalışıyorum. Özellikle erken dönem deneyimlerin bugünkü yaşamımıza etkisi, duygu düzenleme zorlukları, ilişkiler ve kişisel sınırlar konularında derinleştim. Ayrıca Türk kültürünü derinlemesine bilmem ve çokkültürlü yaklaşımım sayesinde göç ve adaptasyon süreçlerinde de destek sağlayabiliyorum. Amacım, yargıdan uzak, güvenli bir alanda kendi potansiyelinizi keşfetmenize destek olmak.
+                </p>
+                <a href="about.html" class="inline-block text-ocean-primary font-bold hover:text-ocean-dark transition-colors border-b-2 border-ocean-primary/30 hover:border-ocean-primary pb-1">
+                    Detaylı Özgeçmişim &rarr;
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- HİZMETLER BÖLÜMÜ -->
+    <section id="hizmetler" class="bg-sand-bg px-6 py-20 md:py-32 relative">
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#2A6F7B 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="text-ocean-primary/80 uppercase tracking-widest text-xs font-bold mb-3 block">Size Nasıl Yardımcı Olabilirim?</span>
+            <h2 class="text-3xl md:text-4xl font-serif text-ocean-primary mb-16">Çalışma Alanlarım</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kart 1 -->
+                <div class="p-10 rounded-xl hover:shadow-xl transition-all duration-300 bg-sand-bg border border-ocean-primary/20 group cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="text-ocean-primary text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 bg-sand-bg w-20 h-20 flex items-center justify-center rounded-full shadow-inner mx-auto text-center border border-ocean-primary/10">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Bireysel Psikolojik Danışmanlık</h3>
+                    <p class="text-text-main opacity-80 leading-relaxed">
+                        Genç yetişkin ve yetişkinler için kaygı, stres, ilişki zorlukları ve yaşam geçişlerinde destek.
+                    </p>
+                </div>
+
+                <!-- Kart 2 -->
+                <div class="p-10 rounded-xl hover:shadow-xl transition-all duration-300 bg-sand-bg border border-ocean-primary/20 group cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="text-ocean-primary text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 bg-sand-bg w-20 h-20 flex items-center justify-center rounded-full shadow-inner mx-auto text-center border border-ocean-primary/10">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Online Danışmanlık</h3>
+                    <p class="text-text-main opacity-80 leading-relaxed">
+                        Kendi koltuğunuzun rahatlığında, mesafeleri ortadan kaldıran profesyonel destek.
+                    </p>
+                </div>
+
+                <!-- Kart 3 -->
+                <div class="p-10 rounded-xl hover:shadow-xl transition-all duration-300 bg-sand-bg border border-ocean-primary/20 group cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="text-ocean-primary text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 bg-sand-bg w-20 h-20 flex items-center justify-center rounded-full shadow-inner mx-auto text-center border border-ocean-primary/10">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Grup Danışmanlığı</h3>
+                    <p class="text-text-main opacity-80 leading-relaxed">
+                        Paylaşım odaklı grup oturumlarıyla dayanıklılık ve ilişki becerilerinizi destekleme.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="iletisim" class="bg-sand-bg pt-20 pb-10 px-6 border-t border-ocean-primary/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div class="bg-white/90 rounded-2xl shadow-xl shadow-ocean-primary/10 border border-ocean-primary/10 p-8">
+                <h2 class="text-2xl font-serif text-ocean-primary mb-4 text-center">Ön Görüşme Talep Formu</h2>
+                <p class="text-sm text-text-main opacity-80 text-center mb-6">Formu doldurduğunuzda bilgileriniz güvenle doğrudan e-posta adresime düşer.</p>
+                <form action="https://formsubmit.co/irem.simsar@psychologie.ch" method="POST" class="space-y-4">
+                    <input type="hidden" name="_subject" value="Yeni Randevu Talebi">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-name" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Adınız Soyadınız</label>
+                        <input id="contact-name" name="name" type="text" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Örn. Ayşe Yılmaz">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-email" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">E-posta</label>
+                        <input id="contact-email" name="email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="ornek@email.com">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-phone" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Telefon</label>
+                        <input id="contact-phone" name="phone" type="tel" autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Opsiyonel">
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-message" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Mesajınız</label>
+                        <textarea id="contact-message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Kendinizden veya ihtiyaçlarınızdan kısaca bahsedebilirsiniz."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-ocean-primary text-white py-4 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all transform hover:scale-[1.01] hover:bg-ocean-dark shadow-lg">
+                        Formu Gönder
+                    </button>
+                </form>
+            </div>
+
+            <div class="space-y-10">
+                <div>
+                    <div class="text-xl font-serif font-bold text-ocean-primary mb-6">Irem Simsar</div>
+                    <p class="text-text-main text-sm leading-relaxed opacity-80">
+                        Psikolog ve psikolojik danışman. İçsel yolculuğunuzda size eşlik eden profesyonel rehber.
+                    </p>
+                    <div class="mt-6 flex gap-4">
+                        <a href="https://www.linkedin.com/in/irem-simsar/" target="_blank" rel="noopener" class="text-ocean-primary hover:text-ocean-dark transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-lg text-ocean-primary mb-4">İletişim</h4>
+                    <ul class="space-y-3 text-text-main opacity-80 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-envelope mt-1 text-ocean-primary"></i> irem.simsar@psychologie.ch</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-ocean-primary"></i> Zürih, İsviçre</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-lg text-ocean-primary mb-4">Menü</h4>
+                    <ul class="space-y-3 text-text-main opacity-80 text-sm">
+                        <li><a href="#hakkimda" class="hover:text-ocean-primary transition-colors">Hakkımda</a></li>
+                        <li><a href="#" class="hover:text-ocean-primary transition-colors">Sıkça Sorulan Sorular</a></li>
+                        <li><a href="#" class="hover:text-ocean-primary transition-colors">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-text-main opacity-40 text-xs pt-8 border-t border-ocean-primary/10">
+            &copy; 2024 Irem Simsar Psikolojik Danışmanlık. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('open');
+        }
+        
+    </script>
+    <script src="https://www.w3counter.com/tracker.js?id=156676"></script>
+</body>
+</html>
