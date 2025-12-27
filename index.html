@@ -263,9 +263,10 @@
             <div class="bg-white/90 rounded-2xl shadow-xl shadow-ocean-primary/10 border border-ocean-primary/10 p-8">
                 <h2 class="text-2xl font-serif text-ocean-primary mb-4 text-center">Ön Görüşme Talep Formu</h2>
                 <p class="text-sm text-text-main opacity-80 text-center mb-6">Formu doldurduğunuzda bilgileriniz güvenle doğrudan e-posta adresime düşer.</p>
-                <form action="https://formsubmit.co/irem.simsar@psychologie.ch" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="Yeni Randevu Talebi">
-                    <input type="hidden" name="_captcha" value="false">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    <input type="hidden" name="access_key" value="1be2505b-3532-48a4-b36c-9b76dc6cc459">
+                    <input type="hidden" name="subject" value="Yeni Randevu Talebi">
+                    <input type="hidden" name="from_name" value="Irem Simsar Website">
                     <div class="flex flex-col gap-2">
                         <label for="contact-name" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Adınız Soyadınız</label>
                         <input id="contact-name" name="name" type="text" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Örn. Ayşe Yılmaz">
@@ -303,15 +304,15 @@
                     <!-- Onay Kutucukları -->
                     <div class="space-y-3 pt-2">
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="terms-checkbox" name="terms" required class="mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
+                            <input type="checkbox" id="terms-checkbox" name="terms" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
                             <label for="terms-checkbox" class="text-xs text-text-main leading-relaxed">Şartlar ve koşulları ile veri koruma anlaşmasını kabul ediyorum.</label>
                         </div>
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="payment-checkbox" name="payment" required class="mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
+                            <input type="checkbox" id="payment-checkbox" name="payment" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
                             <label for="payment-checkbox" class="text-xs text-text-main leading-relaxed">Finansman (kendi ödeme) hakkında bilgilendirildim.</label>
                         </div>
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="cancellation-checkbox" name="cancellation" required class="mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
+                            <input type="checkbox" id="cancellation-checkbox" name="cancellation" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
                             <label for="cancellation-checkbox" class="text-xs text-text-main leading-relaxed">İptalleri en az 24 saat önceden bildireceğimi, aksi takdirde ücretlendirileceğimi kabul ediyorum.</label>
                         </div>
                     </div>
@@ -338,7 +339,11 @@
                 <div>
                     <h4 class="font-serif text-lg text-ocean-primary mb-4">İletişim</h4>
                     <ul class="space-y-3 text-text-main opacity-80 text-sm">
-                        <li class="flex items-start gap-3"><i class="fas fa-envelope mt-1 text-ocean-primary"></i> irem.simsar@psychologie.ch</li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope mt-1 text-ocean-primary"></i>
+                            <span id="email-reveal-tr" class="cursor-pointer text-ocean-primary hover:text-ocean-dark transition-colors border-b border-ocean-primary/30 hover:border-ocean-primary" onclick="revealEmail('tr')">E-posta adresini göster</span>
+                            <span id="email-display-tr" class="hidden"></span>
+                        </li>
                         <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-ocean-primary"></i> Zürih, İsviçre</li>
                     </ul>
                 </div>
@@ -358,12 +363,91 @@
         </div>
     </footer>
 
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 transform transition-all">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-ocean-primary/10 mb-4">
+                    <i class="fas fa-check-circle text-ocean-primary text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-serif text-ocean-primary mb-3">Teşekkür Ederim!</h3>
+                <p class="text-text-main mb-6 leading-relaxed">
+                    Mesajınız başarıyla gönderildi. En kısa sürede size geri dönüş yapacağım.
+                </p>
+                <button onclick="closeModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
+                    Kapat
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('open');
         }
-        
+
+        function closeModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('contact-form').reset();
+        }
+
+        function revealEmail(lang) {
+            // Obfuscated email parts
+            const parts = ['irem.simsar', 'psychologie.ch'];
+            const email = parts[0] + '@' + parts[1];
+
+            const revealBtn = document.getElementById('email-reveal-' + lang);
+            const displaySpan = document.getElementById('email-display-' + lang);
+
+            revealBtn.classList.add('hidden');
+            displaySpan.textContent = email;
+            displaySpan.classList.remove('hidden');
+        }
+
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Gönderiliyor...';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+
+                if (response.ok) {
+                    // Show modal
+                    const modal = document.getElementById('thankYouModal');
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                } else {
+                    alert('Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
+                }
+            })
+            .catch(error => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+                alert('Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
+            });
+        });
+
     </script>
     <script src="https://www.w3counter.com/tracker.js?id=156676"></script>
     <!-- Matomo -->
