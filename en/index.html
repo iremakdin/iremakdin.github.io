@@ -304,7 +304,9 @@
                     <div class="space-y-3 pt-2">
                         <div class="flex items-start gap-3">
                             <input type="checkbox" id="terms-checkbox-en" name="terms" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
-                            <label for="terms-checkbox-en" class="text-xs text-text-main leading-relaxed">I agree with the terms and conditions and the data protection agreement.</label>
+                            <label for="terms-checkbox-en" class="text-xs text-text-main leading-relaxed">
+                                I agree with the <a href="#" onclick="openTermsModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">terms and conditions</a> and the <a href="#" onclick="openPrivacyModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">data protection agreement</a>.
+                            </label>
                         </div>
                         <div class="flex items-start gap-3">
                             <input type="checkbox" id="payment-checkbox-en" name="payment" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
@@ -380,6 +382,148 @@
         </div>
     </div>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden transform transition-all my-8">
+            <div class="p-6 border-b border-ocean-primary/10 flex justify-between items-center">
+                <h3 class="text-2xl font-serif text-ocean-primary">Privacy Policy</h3>
+                <button onclick="closePrivacyModal()" class="text-ocean-primary hover:text-ocean-dark text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(85vh-200px)] text-text-main">
+                <p class="mb-4 text-sm leading-relaxed">
+                    This privacy policy applies to the use of our website and the services offered on our website.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">General Data Collection</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    A series of general data and information is collected when you visit our website, including browser types, operating systems, referrer URLs, IP addresses, and access timestamps stored in server logs.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Personal Data Definition</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Personal data refers to all information related to identified or identifiable individuals, with processing including storage, disclosure, retrieval, collection, and deletion activities.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Processing Purpose & Scope</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Data processing is limited to displaying website content, optimizing functionality, and maintaining IT infrastructure security. Personal data will be processed for the duration necessary for the mentioned purposes.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Data Security</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Appropriate technical and organizational measures are implemented to ensure data protection, though absolute security cannot be guaranteed.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Encryption</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    The site employs SSL or TLS encryption to protect transmitted information, indicated by "https://" and a lock icon in browsers.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Cookies</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Only necessary cookies are used to enable basic functions like page navigation, utilizing unique cookie IDs.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Communication</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Email contact is available but confidentiality via email cannot be guaranteed for sensitive information.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">User Rights</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Individuals possess the right to access, rectify, delete, or restrict the processing of your personal data under applicable data protection laws.
+                </p>
+
+                <p class="mt-6 text-xs text-text-main/60">Last updated: December 2025</p>
+            </div>
+            <div class="p-6 border-t border-ocean-primary/10 mb-4">
+                <button onclick="closePrivacyModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden transform transition-all my-8">
+            <div class="p-6 border-b border-ocean-primary/10 flex justify-between items-center">
+                <h3 class="text-2xl font-serif text-ocean-primary">General Terms and Conditions</h3>
+                <button onclick="closeTermsModal()" class="text-ocean-primary hover:text-ocean-dark text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(85vh-200px)] text-text-main">
+                <p class="mb-4 text-sm leading-relaxed">
+                    These General Terms and Conditions ("GTC") govern the use of the <strong>iremsimsar.com</strong> website and the services offered. By using this website, you agree to these terms.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">1. Scope</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    This website provides informational content and general information about psychological counseling services. The information on this website does not substitute medical or psychiatric diagnosis or treatment.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">2. Nature of Services</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    The psychological counseling services offered are conducted within the framework of professional and ethical standards applicable in Switzerland. Information provided through this website does not constitute an individual counseling relationship.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    For emergency situations (such as risk of harm to self or others), this website or online counseling services are not appropriate. In such cases, emergency services or relevant crisis hotlines should be contacted immediately.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">3. Appointments and Fees</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Psychological counseling sessions are conducted by appointment. Fees are determined based on session duration and service type and are clearly communicated to the client before the session.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    In Switzerland, psychological counseling services are generally not covered by basic health insurance. Payment terms, cancellation, and postponement rules are specified separately in the information shared with the client.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">4. Cancellation Policy</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Cancellation of appointments less than the specified period (usually 24 hours) in advance or failure to attend the appointment may result in charges. Details are specified in the counseling agreement.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">5. Limitation of Liability</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Maximum care is taken to ensure that the information on the website is current and accurate. However, the completeness or accuracy of the content is not guaranteed.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    No liability is accepted for direct or indirect damages that may arise from the use of the website.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">6. Data Protection</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Personal data is processed in accordance with the Swiss Federal Data Protection Act (DSG) and other applicable legislation. For detailed information, please review the Privacy Policy.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">7. Intellectual Property Rights</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    All texts, images, and other content on the website are protected by copyright. They may not be copied, reproduced, or distributed without written permission.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">8. Applicable Law</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    These General Terms and Conditions are governed by Swiss law. Swiss law applies to any disputes that may arise.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">9. Changes</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    These General Terms and Conditions may be updated as deemed necessary. The current version is effective from the date of publication on the website.
+                </p>
+
+                <p class="mt-6 text-xs text-text-main/60">Last updated: December 2025</p>
+            </div>
+            <div class="p-6 border-t border-ocean-primary/10 mb-4">
+                <button onclick="closeTermsModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -391,6 +535,32 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             document.getElementById('contact-form').reset();
+        }
+
+        function openTermsModal(e) {
+            e.preventDefault();
+            const modal = document.getElementById('termsModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeTermsModal() {
+            const modal = document.getElementById('termsModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openPrivacyModal(e) {
+            e.preventDefault();
+            const modal = document.getElementById('privacyModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
 
         function revealEmail(lang) {

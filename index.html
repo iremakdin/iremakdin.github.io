@@ -311,7 +311,9 @@
                     <div class="space-y-3 pt-2">
                         <div class="flex items-start gap-3">
                             <input type="checkbox" id="terms-checkbox" name="terms" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
-                            <label for="terms-checkbox" class="text-xs text-text-main leading-relaxed">Şartlar ve koşulları ile veri koruma anlaşmasını kabul ediyorum.</label>
+                            <label for="terms-checkbox" class="text-xs text-text-main leading-relaxed">
+                                <a href="#" onclick="openTermsModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">Şartlar ve koşulları</a> ile <a href="#" onclick="openPrivacyModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">veri koruma anlaşmasını</a> kabul ediyorum.
+                            </label>
                         </div>
                         <div class="flex items-start gap-3">
                             <input type="checkbox" id="payment-checkbox" name="payment" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
@@ -387,6 +389,148 @@
         </div>
     </div>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden transform transition-all my-8">
+            <div class="p-6 border-b border-ocean-primary/10 flex justify-between items-center">
+                <h3 class="text-2xl font-serif text-ocean-primary">Gizlilik Bildirimi</h3>
+                <button onclick="closePrivacyModal()" class="text-ocean-primary hover:text-ocean-dark text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(85vh-200px)] text-text-main">
+                <p class="mb-4 text-sm leading-relaxed">
+                    Aşağıdaki gizlilik politikası, web sitemizin ve web sitemizde sunulan hizmetlerin kullanımı için geçerlidir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Genel Veri Toplama</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Web sitemizi ziyaret ettiğinizde tarayıcı türleri, işletim sistemleri, yönlendiren bilgiler, IP adresleri ve erişim zaman damgaları dahil olmak üzere bir dizi genel veri ve bilgi toplanır. Bu veriler sunucu günlüklerinde saklanır.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Kişisel Veri Tanımı</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Kişisel veriler, belirli veya tanımlanabilir kişilerle ilgili tüm bilgileri kapsar. Bu, saklama, ifşa etme, silme ve değiştirme işlemlerini içerir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">İşleme Türü ve Amacı</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Veri işleme yalnızca gerekli olduğu ölçüde gerçekleşir: web sitesi içeriğini doğru şekilde görüntülemek, siteyi optimize etmek, BT altyapısı işlevselliğini sağlamak ve siber saldırılar sırasında yetkililere bilgi sağlamak için.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Veri Güvenliği</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Mutlak veri güvenliğini garanti edemiyoruz. Teknik ve organizasyonel önlemler uygulanmaktadır, ancak ihlaller meydana gelebilir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">SSL/TLS Şifreleme</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Web sitesi, iletilen verileri korumak için şifreleme kullanır. Bu, tarayıcıdaki "https://" ve kilit simgesi ile tanımlanabilir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Çerezler</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Yalnızca sayfa navigasyonu gibi temel işlevselliği etkinleştirmek için gerekli çerezler kullanılır.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">İletişim</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    İletişim bilgileri (telefon, e-posta) yalnızca talepleri işlemek ve yanıtlamak için kullanılır. E-posta gizliliği garanti edilemez.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Kullanıcı Hakları</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Bireyler, veri koruma yasaları kapsamında bilgilere erişim, düzeltme, silme ve engelleme haklarına sahiptir.
+                </p>
+
+                <p class="mt-6 text-xs text-text-main/60">Son güncelleme: Aralık 2025</p>
+            </div>
+            <div class="p-6 border-t border-ocean-primary/10 mb-4">
+                <button onclick="closePrivacyModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
+                    Kapat
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden transform transition-all my-8">
+            <div class="p-6 border-b border-ocean-primary/10 flex justify-between items-center">
+                <h3 class="text-2xl font-serif text-ocean-primary">Genel Kullanım Koşulları</h3>
+                <button onclick="closeTermsModal()" class="text-ocean-primary hover:text-ocean-dark text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(85vh-200px)] text-text-main">
+                <p class="mb-4 text-sm leading-relaxed">
+                    Bu Genel Kullanım Koşulları ("GTC"), <strong>iremsimsar.com</strong> web sitesinin kullanımı ve sunulan hizmetlerle ilgili şartları düzenler. Web sitesini kullanarak bu koşulları kabul etmiş sayılırsınız.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">1. Kapsam</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Bu web sitesi, bilgilendirme amaçlı içerikler ve psikolojik danışmanlık hizmetlerine ilişkin genel bilgiler sunar. Web sitesinde yer alan bilgiler, tıbbi ya da psikiyatrik teşhis veya tedavi yerine geçmez.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">2. Hizmetlerin Niteliği</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Sunulan psikolojik danışmanlık hizmetleri, İsviçre'de geçerli mesleki ve etik kurallar çerçevesinde yürütülür. Web sitesi üzerinden verilen bilgiler, bireysel danışmanlık ilişkisi kurulduğu anlamına gelmez.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Acil durumlar (kendine veya başkasına zarar verme riski gibi) için bu web sitesi veya online danışmanlık hizmetleri uygun değildir. Böyle durumlarda derhal acil servisler veya ilgili kriz hatlarıyla iletişime geçilmelidir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">3. Randevu ve Ücretlendirme</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Psikolojik danışmanlık seansları randevu esasına göre yürütülür. Ücretler, seans süresi ve hizmet türüne göre belirlenir ve danışana seans öncesinde açıkça bildirilir.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    İsviçre'de psikolojik danışmanlık hizmetleri genellikle temel sağlık sigortası tarafından karşılanmaz. Ödeme koşulları, iptal ve erteleme kuralları ayrıca danışanla paylaşılan bilgilendirme metninde belirtilir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">4. İptal ve Değişiklikler</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Randevuların belirlenen süreden (genellikle 24 saat) daha kısa süre kala iptal edilmesi veya randevuya gelinmemesi durumunda ücret talep edilebilir. Detaylar danışmanlık sözleşmesinde belirtilir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">5. Sorumluluğun Sınırlandırılması</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Web sitesinde yer alan bilgilerin güncel ve doğru olması için azami özen gösterilmektedir. Ancak içeriklerin eksiksiz veya hatasız olduğu garanti edilmez.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Web sitesinin kullanımından doğabilecek doğrudan veya dolaylı zararlardan sorumluluk kabul edilmez.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">6. Veri Koruma</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Kişisel veriler, İsviçre Federal Veri Koruma Yasası (DSG) ve uygulanabilir diğer mevzuata uygun olarak işlenir. Detaylı bilgi için Gizlilik Politikası (Privacy Policy) incelenmelidir.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">7. Fikri Mülkiyet Hakları</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Web sitesinde yer alan tüm metinler, görseller ve diğer içerikler telif hakkı ile korunmaktadır. Yazılı izin olmaksızın kopyalanamaz, çoğaltılamaz veya dağıtılamaz.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">8. Uygulanacak Hukuk</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Bu Genel Kullanım Koşulları İsviçre hukuku uyarınca düzenlenmiştir. Doğabilecek uyuşmazlıklarda İsviçre hukuku uygulanır.
+                </p>
+
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">9. Değişiklikler</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Bu Genel Kullanım Koşulları gerekli görüldüğünde güncellenebilir. Güncel versiyon web sitesinde yayımlandığı tarihten itibaren geçerli olur.
+                </p>
+
+                <p class="mt-6 text-xs text-text-main/60">Son güncelleme: Aralık 2025</p>
+            </div>
+            <div class="p-6 border-t border-ocean-primary/10 mb-4">
+                <button onclick="closeTermsModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
+                    Kapat
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -398,6 +542,32 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             document.getElementById('contact-form').reset();
+        }
+
+        function openTermsModal(e) {
+            e.preventDefault();
+            const modal = document.getElementById('termsModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeTermsModal() {
+            const modal = document.getElementById('termsModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openPrivacyModal(e) {
+            e.preventDefault();
+            const modal = document.getElementById('privacyModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
 
         function revealEmail(lang) {
