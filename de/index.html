@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irem Simsar - Psychological Counseling</title>
-    
+    <title>Irem Simsar - Psychologische Beratung</title>
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        /* COLOR PALETTE: WARM BLUE + DARK BEIGE */
-                        'ocean-primary': '#2A6F7B', /* Main Color: Warm Petrol Blue */
-                        'ocean-dark': '#1D525E',    /* Darker tone */
-                        'sand-bg': '#E0D0C1',       /* Background same as button color (Beige) */
-                        'soft-cream': '#E0D0C1',    /* ACCENT: Beige tone (Same as background) */
-                        'text-main': '#334155',     /* Text: Dark Slate Gray */
+                        'ocean-primary': '#2A6F7B',
+                        'ocean-dark': '#1D525E',
+                        'sand-bg': '#E0D0C1',
+                        'soft-cream': '#E0D0C1',
+                        'text-main': '#334155',
                         'pure-white': '#ffffff',
                     },
                     fontFamily: {
@@ -42,7 +41,6 @@
     </script>
 
     <style>
-        /* Smooth transitions */
         .fade-in {
             animation: fadeIn 1.5s ease-in;
         }
@@ -50,7 +48,7 @@
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        
+
         #mobile-menu {
             transition: max-height 0.3s ease-in-out;
             max-height: 0;
@@ -77,18 +75,18 @@
     <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-sand-bg sticky top-0 z-50 shadow-sm/10 backdrop-blur-md bg-opacity-95 border-b border-ocean-primary/5">
         <div class="text-ocean-primary tracking-wide">
             <div class="text-2xl font-serif font-semibold">Irem Simsar</div>
-            <div class="text-xs font-sans uppercase opacity-80 -mt-1">Psychological Counselor</div>
+            <div class="text-xs font-sans uppercase opacity-80 -mt-1">Psychologische Beraterin</div>
         </div>
-        
+
         <!-- Desktop Menu -->
         <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-semibold text-ocean-primary items-center">
-            <a href="about.html" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">About</a>
-            <a href="#services" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Services</a>
-            <a href="#contact" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Contact</a>
+            <a href="about.html" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Über mich</a>
+            <a href="#services" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Leistungen</a>
+            <a href="#contact" class="hover:text-ocean-dark transition-colors border-b-2 border-transparent hover:border-ocean-primary/30 pb-1">Kontakt</a>
             <div class="flex gap-2 ml-4">
                 <a href="../index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded hover:bg-ocean-primary/20 transition-colors">TR</a>
-                <span class="px-3 py-1 text-xs bg-ocean-primary text-white rounded">EN</span>
-                <a href="../de/index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded hover:bg-ocean-primary/20 transition-colors">DE</a>
+                <a href="../en/index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded hover:bg-ocean-primary/20 transition-colors">EN</a>
+                <span class="px-3 py-1 text-xs bg-ocean-primary text-white rounded">DE</span>
             </div>
         </div>
 
@@ -100,20 +98,20 @@
 
     <!-- Mobile Menu Content -->
     <div id="mobile-menu" class="bg-sand-bg md:hidden flex flex-col items-center gap-4 pb-4 shadow-sm border-b border-ocean-primary/10">
-        <a href="about.html" class="text-ocean-primary font-semibold py-2">About</a>
-        <a href="#services" class="text-ocean-primary font-semibold py-2">Services</a>
-        <a href="#contact" class="text-ocean-primary font-semibold py-2">Contact</a>
+        <a href="about.html" class="text-ocean-primary font-semibold py-2">Über mich</a>
+        <a href="#services" class="text-ocean-primary font-semibold py-2">Leistungen</a>
+        <a href="#contact" class="text-ocean-primary font-semibold py-2">Kontakt</a>
         <div class="flex gap-2">
             <a href="../index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded">TR</a>
-            <span class="px-3 py-1 text-xs bg-ocean-primary text-white rounded">EN</span>
-            <a href="../de/index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded">DE</a>
+            <a href="../en/index.html" class="px-3 py-1 text-xs bg-ocean-primary/10 text-ocean-primary rounded">EN</a>
+            <span class="px-3 py-1 text-xs bg-ocean-primary text-white rounded">DE</span>
         </div>
     </div>
 
     <!-- HERO SECTION -->
     <header class="relative text-white px-6 py-24 md:py-36 text-center flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed"
             style="background-image: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?q=80&w=1000&auto=format&fit=crop');">
-        
+
         <!-- Color Overlay -->
         <div class="absolute inset-0 bg-ocean-primary/80 mix-blend-multiply z-0"></div>
 
@@ -123,13 +121,13 @@
         </div>
 
         <div class="max-w-3xl fade-in relative z-10">
-            <span class="text-xl md:text-2xl uppercase tracking-[0.15em] opacity-90 mb-8 block text-orange-50 font-medium">Psychological Counseling</span>
+            <span class="text-xl md:text-2xl uppercase tracking-[0.15em] opacity-90 mb-8 block text-orange-50 font-medium">Psychologische Beratung</span>
             <p class="text-3xl md:text-4xl opacity-95 mb-10 font-light max-w-2xl mx-auto leading-relaxed text-white font-serif">
-                A compassionate, non-judgmental, and professional space for change.
+                Ein mitfühlender, urteilsfreier und professioneller Raum für Veränderung.
             </p>
-            
+
             <a href="#contact" class="inline-block bg-white/90 hover:bg-white text-ocean-primary py-4 px-10 rounded-full text-sm font-bold uppercase tracking-widest transition-all transform hover:scale-105 shadow-lg cursor-pointer">
-                <i class="fas fa-calendar-check mr-2"></i>Schedule Appointment
+                <i class="fas fa-calendar-check mr-2"></i>Gespräch planen
             </a>
         </div>
     </header>
@@ -139,22 +137,22 @@
         <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
             <!-- Image Area -->
             <div class="w-full md:w-1/2 h-[400px] md:h-[550px] relative rounded-lg overflow-hidden shadow-2xl shadow-ocean-primary/10">
-                <img src="../irem.jpg" 
-                     alt="Irem Simsar" 
+                <img src="../irem.jpg"
+                     alt="Irem Simsar"
                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
             </div>
-            
+
             <!-- Text Area -->
             <div class="w-full md:w-1/2">
-                <h2 class="text-3xl md:text-5xl font-serif text-ocean-primary mb-6">Hello, I'm Irem.</h2>
+                <h2 class="text-3xl md:text-5xl font-serif text-ocean-primary mb-6">Hallo, ich bin Irem.</h2>
                 <p class="mb-5 text-lg leading-relaxed text-text-main opacity-90">
-                    As a psychologist working with young adults and adults, I'm here to be by your side during life's turning points, in the face of uncertainties, and throughout your personal development journey.
+                    Als Psychologin, die mit jungen Erwachsenen und Erwachsenen arbeitet, bin ich an Ihrer Seite bei Wendepunkten im Leben, in Zeiten der Unsicherheit und auf Ihrem Weg der persönlichen Entwicklung.
                 </p>
                 <p class="mb-8 text-lg leading-relaxed text-text-main opacity-90">
-                    With my master's degree recognized in Switzerland, I work using humanistic approach and Somatic Experiencing® methods. I specialize in the impact of early experiences on our current lives, emotion regulation difficulties, relationships, and personal boundaries. Additionally, my deep knowledge of Turkish culture and multicultural approach enables me to provide support in migration and adaptation processes. My aim is to support you in discovering your own potential in a non-judgmental, safe environment.
+                    Mit meinem in der Schweiz anerkannten Masterabschluss arbeite ich mit humanistischem Ansatz und Somatic Experiencing® Methoden. Meine Schwerpunkte sind die Auswirkungen früher Erfahrungen auf unser heutiges Leben, Schwierigkeiten bei der Emotionsregulation, Beziehungen und persönliche Grenzen. Darüber hinaus ermöglichen mir meine fundierten Kenntnisse der türkischen Kultur und mein multikultureller Ansatz, Sie bei Migrations- und Anpassungsprozessen zu unterstützen. Mein Ziel ist es, Sie in einer urteilsfreien, sicheren Umgebung dabei zu unterstützen, Ihr eigenes Potenzial zu entdecken.
                 </p>
                 <a href="about.html" class="inline-block text-ocean-primary font-bold hover:text-ocean-dark transition-colors border-b-2 border-ocean-primary/30 hover:border-ocean-primary pb-1">
-                    Detailed CV &rarr;
+                    Ausführlicher Lebenslauf &rarr;
                 </a>
             </div>
         </div>
@@ -165,18 +163,18 @@
         <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#2A6F7B 1px, transparent 1px); background-size: 30px 30px;"></div>
 
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            <span class="text-ocean-primary/80 uppercase tracking-widest text-xs font-bold mb-3 block">How Can I Help You?</span>
-            <h2 class="text-3xl md:text-4xl font-serif text-ocean-primary mb-16">My Areas of Practice</h2>
-            
+            <span class="text-ocean-primary/80 uppercase tracking-widest text-xs font-bold mb-3 block">Wie kann ich Ihnen helfen?</span>
+            <h2 class="text-3xl md:text-4xl font-serif text-ocean-primary mb-16">Meine Arbeitsbereiche</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="p-10 rounded-xl hover:shadow-xl transition-all duration-300 bg-white/70 border border-ocean-primary/20 group cursor-pointer shadow-sm hover:shadow-md">
                     <div class="text-ocean-primary text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 bg-white/70 w-20 h-20 flex items-center justify-center rounded-full shadow-inner mx-auto text-center border border-ocean-primary/10">
                         <i class="fas fa-spa"></i>
                     </div>
-                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Individual Psychological Counseling</h3>
+                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Individuelle Psychologische Beratung</h3>
                     <p class="text-text-main opacity-80 leading-relaxed">
-                        Support for young adults and adults dealing with anxiety, stress, relationship difficulties, and life transitions.
+                        Unterstützung für junge Erwachsene und Erwachsene bei Ängsten, Stress, Beziehungsproblemen und Lebensübergängen.
                     </p>
                 </div>
 
@@ -185,9 +183,9 @@
                     <div class="text-ocean-primary text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 bg-white/70 w-20 h-20 flex items-center justify-center rounded-full shadow-inner mx-auto text-center border border-ocean-primary/10">
                         <i class="fas fa-laptop-house"></i>
                     </div>
-                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Online Counseling</h3>
+                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Online-Beratung</h3>
                     <p class="text-text-main opacity-80 leading-relaxed">
-                        Professional support from the comfort of your own space, eliminating distances.
+                        Professionelle Unterstützung bequem von zu Hause aus, unabhängig von Entfernungen.
                     </p>
                 </div>
 
@@ -196,64 +194,64 @@
                     <div class="text-ocean-primary text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 bg-white/70 w-20 h-20 flex items-center justify-center rounded-full shadow-inner mx-auto text-center border border-ocean-primary/10">
                         <i class="fas fa-hands-helping"></i>
                     </div>
-                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Relationship Dynamics</h3>
+                    <h3 class="text-2xl font-serif text-ocean-primary mb-4">Beziehungsdynamik</h3>
                     <p class="text-text-main opacity-80 leading-relaxed">
-                        Work on understanding your connection patterns and building healthier boundaries.
+                        Arbeit am Verständnis Ihrer Bindungsmuster und dem Aufbau gesünderer Grenzen.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <!-- FAQ SECTION -->
     <section class="px-6 py-20 md:py-32 max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-serif text-ocean-primary mb-12 text-center">Frequently Asked Questions (FAQ)</h2>
+        <h2 class="text-3xl md:text-4xl font-serif text-ocean-primary mb-12 text-center">Häufig gestellte Fragen (FAQ)</h2>
 
         <div class="space-y-6">
             <!-- Question 1 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">1. In which languages do you provide counseling services?</h3>
-                <p class="text-text-main leading-relaxed">I conduct counseling sessions in Turkish, my native language, and English, in which I have advanced proficiency (C2 level).</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">1. In welchen Sprachen bieten Sie Beratungsdienste an?</h3>
+                <p class="text-text-main leading-relaxed">Ich führe Beratungsgespräche in Türkisch, meiner Muttersprache, und in Englisch, in dem ich über fortgeschrittene Kenntnisse (C2-Niveau) verfüge.</p>
             </div>
 
             <!-- Question 2 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">2. What methods do you work with?</h3>
-                <p class="text-text-main leading-relaxed">In my practice, I primarily adopt the Humanistic approach. Additionally, I integrate the Somatic Experiencing method, which focuses on the nervous system and body awareness, into my sessions to offer a holistic perspective.</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">2. Mit welchen Methoden arbeiten Sie?</h3>
+                <p class="text-text-main leading-relaxed">In meiner Praxis verfolge ich hauptsächlich den humanistischen Ansatz. Zusätzlich integriere ich die Somatic Experiencing-Methode, die sich auf das Nervensystem und die Körperwahrnehmung konzentriert, um eine ganzheitliche Perspektive zu bieten.</p>
             </div>
 
             <!-- Question 3 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">3. Where do sessions take place? Is online counseling possible?</h3>
-                <p class="text-text-main leading-relaxed mb-3">Yes, I offer both in-person and online services.</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">3. Wo finden die Sitzungen statt? Ist Online-Beratung möglich?</h3>
+                <p class="text-text-main leading-relaxed mb-3">Ja, ich biete sowohl persönliche als auch Online-Dienste an.</p>
                 <ul class="space-y-2 text-text-main">
-                    <li><strong>In-Person:</strong> I conduct sessions in Basel (in collaboration with Praxis Evia).</li>
-                    <li><strong>Online:</strong> I also provide remote video counseling services based on your needs.</li>
+                    <li><strong>Persönlich:</strong> Ich führe Sitzungen in Basel durch (in Zusammenarbeit mit Praxis Evia).</li>
+                    <li><strong>Online:</strong> Ich biete auch Fernberatung per Videogespräch an.</li>
                 </ul>
             </div>
 
             <!-- Question 4 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">4. Do you have authorization and recognition to work in Switzerland?</h3>
-                <p class="text-text-main leading-relaxed">Yes. My master's degree in Guidance and Psychological Counseling from Boğaziçi University has been recognized as M.Sc. Psychology by the Swiss Psychology Professions Commission (PsyKo), and I have the official authorization to use the title "Psychologist" in Switzerland. Additionally, as of 2025, I am a member of FSP (Federation of Swiss Psychologists) and ZÜPP (Zurich Society for Psychology and Psychotherapy).</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">4. Haben Sie die Berechtigung und Anerkennung, in der Schweiz zu arbeiten?</h3>
+                <p class="text-text-main leading-relaxed">Ja. Mein Masterabschluss in Beratung und Psychologischer Beratung von der Boğaziçi-Universität wurde von der Schweizer Psychologieberufe-Kommission (PsyKo) als M.Sc. Psychologie anerkannt, und ich habe die offizielle Berechtigung, den Titel "Psychologin" in der Schweiz zu führen. Darüber hinaus bin ich ab 2025 Mitglied der FSP (Föderation Schweizer Psychologinnen und Psychologen) und der ZÜPP (Zürcher Gesellschaft für Psychologie und Psychotherapie).</p>
             </div>
 
             <!-- Question 5 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">5. In which areas do you provide support?</h3>
-                <p class="text-text-main leading-relaxed">Within the scope of individual counseling for adults, my main areas of practice include relationship issues, the impact of childhood experiences on the present, emotion regulation difficulties, and life adjustment processes (such as relocation).</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">5. In welchen Bereichen bieten Sie Unterstützung an?</h3>
+                <p class="text-text-main leading-relaxed">Im Rahmen der Einzelberatung für Erwachsene umfassen meine Hauptarbeitsbereiche Beziehungsprobleme, Auswirkungen von Kindheitserfahrungen auf die Gegenwart, Schwierigkeiten bei der Emotionsregulation und Lebensan passungsprozesse (wie Umzug).</p>
             </div>
 
             <!-- Question 6 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">6. Does health insurance cover session fees?</h3>
-                <p class="text-text-main leading-relaxed">No, my services are not covered by health insurance (basic or supplementary insurance). Currently, I can only accept self-paying clients.</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">6. Übernimmt die Krankenversicherung die Sitzungsgebühren?</h3>
+                <p class="text-text-main leading-relaxed">Nein, meine Leistungen werden nicht von der Krankenversicherung (Grund- oder Zusatzversicherung) übernommen. Derzeit kann ich nur Selbstzahler annehmen.</p>
             </div>
 
             <!-- Question 7 -->
             <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
-                <h3 class="text-lg font-semibold text-ocean-primary mb-3">7. What is the session fee?</h3>
-                <p class="text-text-main leading-relaxed">The standard fee for individual sessions is CHF 140 for 60 minutes. This time includes the direct consultation period and necessary preparation and follow-up work.</p>
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">7. Was ist die Sitzungsgebühr?</h3>
+                <p class="text-text-main leading-relaxed">Die Standardgebühr für Einzelsitzungen beträgt CHF 140 für 60 Minuten. Diese Zeit umfasst die direkte Gesprächszeit sowie notwendige Vor- und Nachbereitungsarbeiten.</p>
             </div>
         </div>
     </section>
@@ -262,66 +260,66 @@
     <footer id="contact" class="bg-sand-bg pt-20 pb-10 px-6 border-t border-ocean-primary/10">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <div class="bg-white/70 rounded-2xl shadow-xl shadow-ocean-primary/10 border border-ocean-primary/10 p-8">
-                <h2 class="text-2xl font-serif text-ocean-primary mb-4 text-center">Introductory Meeting Request Form</h2>
-                <p class="text-sm text-text-main opacity-80 text-center mb-6">When you submit the form, your information is securely delivered directly to my inbox.</p>
+                <h2 class="text-2xl font-serif text-ocean-primary mb-4 text-center">Anfrage für Erstgespräch</h2>
+                <p class="text-sm text-text-main opacity-80 text-center mb-6">Wenn Sie das Formular absenden, werden Ihre Informationen sicher direkt an meine E-Mail gesendet.</p>
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
                     <input type="hidden" name="access_key" value="1be2505b-3532-48a4-b36c-9b76dc6cc459">
-                    <input type="hidden" name="subject" value="New Appointment Request">
+                    <input type="hidden" name="subject" value="Neue Terminanfrage">
                     <input type="hidden" name="from_name" value="Irem Simsar Website">
                     <div class="flex flex-col gap-2">
-                        <label for="contact-name-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Full Name</label>
-                        <input id="contact-name-en" name="name" type="text" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="e.g., Sarah Miller">
+                        <label for="contact-name-de" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Vollständiger Name</label>
+                        <input id="contact-name-de" name="name" type="text" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="z.B. Anna Müller">
                     </div>
                     <div class="flex flex-col gap-2">
-                        <label for="contact-email-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Email</label>
-                        <input id="contact-email-en" name="email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="name@email.com">
+                        <label for="contact-email-de" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">E-Mail</label>
+                        <input id="contact-email-de" name="email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="name@email.com">
                     </div>
                     <div class="flex flex-col gap-2">
-                        <label for="contact-phone-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Phone</label>
-                        <input id="contact-phone-en" name="phone" type="tel" autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Optional">
+                        <label for="contact-phone-de" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Telefon</label>
+                        <input id="contact-phone-de" name="phone" type="tel" autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Optional">
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <label for="contact-reason-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Reason for Application</label>
-                        <select id="contact-reason-en" name="reason" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
-                            <option value="">Please Select</option>
-                            <option value="Adjustment Issues">Adjustment Issues</option>
-                            <option value="Workplace Issues">Workplace Issues</option>
-                            <option value="Educational Issues">Educational Issues</option>
-                            <option value="Relationship Issues">Relationship Issues</option>
-                            <option value="Conflict Resolution">Conflict Resolution</option>
-                            <option value="Stress Management">Stress Management</option>
-                            <option value="Emotional Issues">Emotional Issues</option>
-                            <option value="Personal Development Goals">Personal Development Goals</option>
-                            <option value="Other">Other</option>
+                        <label for="contact-reason-de" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Grund der Anfrage</label>
+                        <select id="contact-reason-de" name="reason" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Bitte wählen</option>
+                            <option value="Anpassungsprobleme">Anpassungsprobleme</option>
+                            <option value="Arbeitsplatzprobleme">Arbeitsplatzprobleme</option>
+                            <option value="Bildungsprobleme">Bildungsprobleme</option>
+                            <option value="Beziehungsprobleme">Beziehungsprobleme</option>
+                            <option value="Konfliktlösung">Konfliktlösung</option>
+                            <option value="Stressmanagement">Stressmanagement</option>
+                            <option value="Emotionale Probleme">Emotionale Probleme</option>
+                            <option value="Persönliche Entwicklungsziele">Persönliche Entwicklungsziele</option>
+                            <option value="Sonstiges">Sonstiges</option>
                         </select>
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <label for="contact-message-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Message</label>
-                        <textarea id="contact-message-en" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="You can briefly describe your needs."></textarea>
+                        <label for="contact-message-de" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Nachricht</label>
+                        <textarea id="contact-message-de" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Sie können Ihre Bedürfnisse kurz beschreiben."></textarea>
                     </div>
 
                     <!-- Consent Checkboxes -->
                     <div class="space-y-3 pt-2">
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="terms-checkbox-en" name="terms" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
-                            <label for="terms-checkbox-en" class="text-xs text-text-main leading-relaxed">
-                                I agree with the <a href="#" onclick="openTermsModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">terms and conditions</a> and the <a href="#" onclick="openPrivacyModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">data protection agreement</a>.
+                            <input type="checkbox" id="terms-checkbox-de" name="terms" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
+                            <label for="terms-checkbox-de" class="text-xs text-text-main leading-relaxed">
+                                Ich stimme den <a href="#" onclick="openTermsModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">Allgemeinen Geschäftsbedingungen</a> und der <a href="#" onclick="openPrivacyModal(event)" class="text-ocean-primary hover:text-ocean-dark underline">Datenschutzerklärung</a> zu.
                             </label>
                         </div>
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="payment-checkbox-en" name="payment" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
-                            <label for="payment-checkbox-en" class="text-xs text-text-main leading-relaxed">I acknowledge and confirm that the service I will receive is not covered by health insurance.</label>
+                            <input type="checkbox" id="payment-checkbox-de" name="payment" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
+                            <label for="payment-checkbox-de" class="text-xs text-text-main leading-relaxed">Ich bestätige, dass die von mir in Anspruch genommene Leistung nicht von der Krankenversicherung übernommen wird.</label>
                         </div>
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="cancellation-checkbox-en" name="cancellation" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
-                            <label for="cancellation-checkbox-en" class="text-xs text-text-main leading-relaxed">I will report cancellations at least 24 hours in advance, as otherwise they will be charged.</label>
+                            <input type="checkbox" id="cancellation-checkbox-de" name="cancellation" required class="flex-shrink-0 mt-1 w-4 h-4 text-ocean-primary border-ocean-primary/30 rounded focus:ring-ocean-primary focus:ring-2">
+                            <label for="cancellation-checkbox-de" class="text-xs text-text-main leading-relaxed">Ich werde Stornierungen mindestens 24 Stunden im Voraus melden, da sonst Gebühren anfallen.</label>
                         </div>
                     </div>
 
                     <button type="submit" class="w-full bg-ocean-primary text-white py-4 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all transform hover:scale-[1.01] hover:bg-ocean-dark shadow-lg">
-                        Submit Form
+                        Formular absenden
                     </button>
                 </form>
             </div>
@@ -330,7 +328,7 @@
                 <div>
                     <div class="text-xl font-serif font-bold text-ocean-primary mb-6">Irem Simsar</div>
                     <p class="text-text-main text-sm leading-relaxed opacity-80">
-                        Psychologist and psychological counselor. Professional guide accompanying you in your psychological support needs.
+                        Psychologin und psychologische Beraterin. Professionelle Begleitung bei Ihren psychologischen Unterstützungsbedürfnissen.
                     </p>
                     <div class="mt-6">
                         <a href="https://www.linkedin.com/in/irem-simsar/" target="_blank" rel="noopener" class="inline-flex text-ocean-primary hover:text-ocean-dark transition-colors">
@@ -340,29 +338,29 @@
                 </div>
 
                 <div>
-                    <h4 class="font-serif text-lg text-ocean-primary mb-4">Contact</h4>
+                    <h4 class="font-serif text-lg text-ocean-primary mb-4">Kontakt</h4>
                     <ul class="space-y-3 text-text-main opacity-80 text-sm">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-envelope mt-1 text-ocean-primary"></i>
-                            <span id="email-reveal-en" class="cursor-pointer text-ocean-primary hover:text-ocean-dark transition-colors border-b border-ocean-primary/30 hover:border-ocean-primary" onclick="revealEmail('en')">Click to show email</span>
-                            <span id="email-display-en" class="hidden"></span>
+                            <span id="email-reveal-de" class="cursor-pointer text-ocean-primary hover:text-ocean-dark transition-colors border-b border-ocean-primary/30 hover:border-ocean-primary" onclick="revealEmail('de')">Klicken Sie, um die E-Mail anzuzeigen</span>
+                            <span id="email-display-de" class="hidden"></span>
                         </li>
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-ocean-primary"></i> Zurich, Switzerland</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-ocean-primary"></i> Zürich, Schweiz</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-serif text-lg text-ocean-primary mb-4">Menu</h4>
+                    <h4 class="font-serif text-lg text-ocean-primary mb-4">Menü</h4>
                     <ul class="space-y-3 text-text-main opacity-80 text-sm">
-                        <li><a href="about.html" class="hover:text-ocean-primary transition-colors">About</a></li>
+                        <li><a href="about.html" class="hover:text-ocean-primary transition-colors">Über mich</a></li>
                         <li><a href="#" class="hover:text-ocean-primary transition-colors">FAQ</a></li>
-                        <li><a href="#" class="hover:text-ocean-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-ocean-primary transition-colors">Datenschutzerklärung</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="text-center text-text-main opacity-40 text-xs pt-8 border-t border-ocean-primary/10">
-            &copy; 2024 Irem Simsar Psychological Counseling. All rights reserved.
+            &copy; 2024 Irem Simsar Psychologische Beratung. Alle Rechte vorbehalten.
         </div>
     </footer>
 
@@ -373,12 +371,12 @@
                 <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-ocean-primary/10 mb-4">
                     <i class="fas fa-check-circle text-ocean-primary text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-serif text-ocean-primary mb-3">Thank You!</h3>
+                <h3 class="text-2xl font-serif text-ocean-primary mb-3">Vielen Dank!</h3>
                 <p class="text-text-main mb-6 leading-relaxed">
-                    Your message has been successfully sent. I will get back to you as soon as possible.
+                    Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich so bald wie möglich bei Ihnen melden.
                 </p>
                 <button onclick="closeModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
-                    Close
+                    Schließen
                 </button>
             </div>
         </div>
@@ -388,61 +386,61 @@
     <div id="privacyModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden transform transition-all my-8">
             <div class="p-6 border-b border-ocean-primary/10 flex justify-between items-center">
-                <h3 class="text-2xl font-serif text-ocean-primary">Privacy Policy</h3>
+                <h3 class="text-2xl font-serif text-ocean-primary">Datenschutzerklärung</h3>
                 <button onclick="closePrivacyModal()" class="text-ocean-primary hover:text-ocean-dark text-2xl">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="p-6 overflow-y-auto max-h-[calc(85vh-200px)] text-text-main">
                 <p class="mb-4 text-sm leading-relaxed">
-                    This privacy policy applies to the use of our website and the services offered on our website.
+                    Diese Datenschutzerklärung gilt für die Nutzung unserer Website und die auf unserer Website angebotenen Dienste.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">General Data Collection</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Allgemeine Datenerfassung</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    A series of general data and information is collected when you visit our website, including browser types, operating systems, referrer URLs, IP addresses, and access timestamps stored in server logs.
+                    Beim Besuch unserer Website werden eine Reihe allgemeiner Daten und Informationen erfasst, darunter Browsertypen, Betriebssysteme, Referrer-URLs, IP-Adressen und Zugriffszeiten, die in Serverprotokollen gespeichert werden.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Personal Data Definition</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Definition personenbezogener Daten</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Personal data refers to all information related to identified or identifiable individuals, with processing including storage, disclosure, retrieval, collection, and deletion activities.
+                    Personenbezogene Daten beziehen sich auf alle Informationen, die sich auf identifizierte oder identifizierbare Personen beziehen. Die Verarbeitung umfasst Speicherung, Offenlegung, Abruf, Erfassung und Löschung.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Processing Purpose & Scope</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Verarbeitungszweck und -umfang</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Data processing is limited to displaying website content, optimizing functionality, and maintaining IT infrastructure security. Personal data will be processed for the duration necessary for the mentioned purposes.
+                    Die Datenverarbeitung ist auf die Anzeige von Website-Inhalten, die Optimierung der Funktionalität und die Aufrechterhaltung der IT-Infrastruktursicherheit beschränkt. Personenbezogene Daten werden für die für die genannten Zwecke erforderliche Dauer verarbeitet.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Data Security</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Datensicherheit</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Appropriate technical and organizational measures are implemented to ensure data protection, though absolute security cannot be guaranteed.
+                    Es werden geeignete technische und organisatorische Maßnahmen zum Datenschutz umgesetzt, obwohl absolute Sicherheit nicht garantiert werden kann.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Encryption</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Verschlüsselung</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    The site employs SSL or TLS encryption to protect transmitted information, indicated by "https://" and a lock icon in browsers.
+                    Die Website verwendet SSL- oder TLS-Verschlüsselung zum Schutz übermittelter Informationen, erkennbar an "https://" und einem Schloss-Symbol in Browsern.
                 </p>
 
                 <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Cookies</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Only necessary cookies are used to enable basic functions like page navigation, utilizing unique cookie IDs.
+                    Es werden nur notwendige Cookies verwendet, um grundlegende Funktionen wie die Seitennavigation zu ermöglichen.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Communication</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Kommunikation</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Email contact is available but confidentiality via email cannot be guaranteed for sensitive information.
+                    E-Mail-Kontakt ist verfügbar, aber die Vertraulichkeit per E-Mail kann für sensible Informationen nicht garantiert werden.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">User Rights</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">Benutzerrechte</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Individuals possess the right to access, rectify, delete, or restrict the processing of your personal data under applicable data protection laws.
+                    Personen besitzen das Recht auf Zugang, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer personenbezogenen Daten gemäß den geltenden Datenschutzgesetzen.
                 </p>
 
-                <p class="mt-6 text-xs text-text-main/60">Last updated: December 2025</p>
+                <p class="mt-6 text-xs text-text-main/60">Letzte Aktualisierung: Dezember 2025</p>
             </div>
             <div class="p-6 border-t border-ocean-primary/10 mb-4">
                 <button onclick="closePrivacyModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
-                    Close
+                    Schließen
                 </button>
             </div>
         </div>
@@ -452,75 +450,75 @@
     <div id="termsModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden transform transition-all my-8">
             <div class="p-6 border-b border-ocean-primary/10 flex justify-between items-center">
-                <h3 class="text-2xl font-serif text-ocean-primary">General Terms and Conditions</h3>
+                <h3 class="text-2xl font-serif text-ocean-primary">Allgemeine Geschäftsbedingungen</h3>
                 <button onclick="closeTermsModal()" class="text-ocean-primary hover:text-ocean-dark text-2xl">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="p-6 overflow-y-auto max-h-[calc(85vh-200px)] text-text-main">
                 <p class="mb-4 text-sm leading-relaxed">
-                    These General Terms and Conditions ("GTC") govern the use of the <strong>iremsimsar.com</strong> website and the services offered. By using this website, you agree to these terms.
+                    Diese Allgemeinen Geschäftsbedingungen ("AGB") regeln die Nutzung der Website <strong>iremsimsar.com</strong> und die angebotenen Dienste. Durch die Nutzung dieser Website stimmen Sie diesen Bedingungen zu.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">1. Scope</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">1. Geltungsbereich</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    This website provides informational content and general information about psychological counseling services. The information on this website does not substitute medical or psychiatric diagnosis or treatment.
+                    Diese Website bietet informative Inhalte und allgemeine Informationen über psychologische Beratungsdienste. Die Informationen auf dieser Website ersetzen keine medizinische oder psychiatrische Diagnose oder Behandlung.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">2. Nature of Services</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">2. Art der Dienstleistungen</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    The psychological counseling services offered are conducted within the framework of professional and ethical standards applicable in Switzerland. Information provided through this website does not constitute an individual counseling relationship.
+                    Die angebotenen psychologischen Beratungsdienste werden im Rahmen der in der Schweiz geltenden beruflichen und ethischen Standards durchgeführt. Die über diese Website bereitgestellten Informationen begründen keine individuelle Beratungsbeziehung.
                 </p>
                 <p class="mb-4 text-sm leading-relaxed">
-                    For emergency situations (such as risk of harm to self or others), this website or online counseling services are not appropriate. In such cases, emergency services or relevant crisis hotlines should be contacted immediately.
-                </p>
-
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">3. Appointments and Fees</h4>
-                <p class="mb-4 text-sm leading-relaxed">
-                    Psychological counseling sessions are conducted by appointment. Fees are determined based on session duration and service type and are clearly communicated to the client before the session.
-                </p>
-                <p class="mb-4 text-sm leading-relaxed">
-                    In Switzerland, psychological counseling services are generally not covered by basic health insurance. Payment terms, cancellation, and postponement rules are specified separately in the information shared with the client.
+                    Bei Notfallsituationen (wie Selbst- oder Fremdgefährdung) sind diese Website oder Online-Beratungsdienste nicht geeignet. In solchen Fällen sollten sofort Notdienste oder entsprechende Krisenhotlines kontaktiert werden.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">4. Cancellation Policy</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">3. Termine und Gebühren</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Cancellation of appointments less than the specified period (usually 24 hours) in advance or failure to attend the appointment may result in charges. Details are specified in the counseling agreement.
+                    Psychologische Beratungsgespräche werden nach Terminvereinbarung durchgeführt. Die Gebühren werden basierend auf Sitzungsdauer und Dienstleistungsart festgelegt und dem Klienten vor der Sitzung klar mitgeteilt.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    In der Schweiz werden psychologische Beratungsdienste in der Regel nicht von der Grundversicherung übernommen. Zahlungsbedingungen, Stornierungen und Verschiebungsregeln werden separat in den mit dem Klienten geteilten Informationen festgelegt.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">5. Limitation of Liability</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">4. Stornierungsrichtlinie</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Maximum care is taken to ensure that the information on the website is current and accurate. However, the completeness or accuracy of the content is not guaranteed.
-                </p>
-                <p class="mb-4 text-sm leading-relaxed">
-                    No liability is accepted for direct or indirect damages that may arise from the use of the website.
+                    Die Stornierung von Terminen mit weniger als der angegebenen Frist (normalerweise 24 Stunden) oder das Nichterscheinen zum Termin kann zu Gebühren führen. Details sind in der Beratungsvereinbarung angegeben.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">6. Data Protection</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">5. Haftungsbeschränkung</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    Personal data is processed in accordance with the Swiss Federal Data Protection Act (DSG) and other applicable legislation. For detailed information, please review the Privacy Policy.
+                    Es wird größte Sorgfalt darauf verwendet, dass die Informationen auf der Website aktuell und korrekt sind. Die Vollständigkeit oder Richtigkeit der Inhalte wird jedoch nicht garantiert.
+                </p>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Es wird keine Haftung für direkte oder indirekte Schäden übernommen, die durch die Nutzung der Website entstehen können.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">7. Intellectual Property Rights</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">6. Datenschutz</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    All texts, images, and other content on the website are protected by copyright. They may not be copied, reproduced, or distributed without written permission.
+                    Personenbezogene Daten werden in Übereinstimmung mit dem Schweizer Bundesgesetz über den Datenschutz (DSG) und anderen anwendbaren Rechtsvorschriften verarbeitet. Für detaillierte Informationen lesen Sie bitte die Datenschutzerklärung.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">8. Applicable Law</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">7. Geistige Eigentumsrechte</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    These General Terms and Conditions are governed by Swiss law. Swiss law applies to any disputes that may arise.
+                    Alle Texte, Bilder und anderen Inhalte auf der Website sind urheberrechtlich geschützt. Sie dürfen ohne schriftliche Genehmigung nicht kopiert, reproduziert oder verbreitet werden.
                 </p>
 
-                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">9. Changes</h4>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">8. Anwendbares Recht</h4>
                 <p class="mb-4 text-sm leading-relaxed">
-                    These General Terms and Conditions may be updated as deemed necessary. The current version is effective from the date of publication on the website.
+                    Diese Allgemeinen Geschäftsbedingungen unterliegen dem Schweizer Recht. Schweizer Recht gilt für alle Streitigkeiten, die entstehen können.
                 </p>
 
-                <p class="mt-6 text-xs text-text-main/60">Last updated: December 2025</p>
+                <h4 class="text-lg font-semibold text-ocean-primary mt-6 mb-3">9. Änderungen</h4>
+                <p class="mb-4 text-sm leading-relaxed">
+                    Diese Allgemeinen Geschäftsbedingungen können bei Bedarf aktualisiert werden. Die aktuelle Version tritt ab dem Datum der Veröffentlichung auf der Website in Kraft.
+                </p>
+
+                <p class="mt-6 text-xs text-text-main/60">Letzte Aktualisierung: Dezember 2025</p>
             </div>
             <div class="p-6 border-t border-ocean-primary/10 mb-4">
                 <button onclick="closeTermsModal()" class="w-full bg-ocean-primary text-white py-3 px-6 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-ocean-dark shadow-lg">
-                    Close
+                    Schließen
                 </button>
             </div>
         </div>
@@ -566,7 +564,6 @@
         }
 
         function revealEmail(lang) {
-            // Obfuscated email parts
             const parts = ['irem.simsar', 'psychologie.ch'];
             const email = parts[0] + '@' + parts[1];
 
@@ -578,7 +575,6 @@
             displaySpan.classList.remove('hidden');
         }
 
-        // Handle form submission
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -587,9 +583,8 @@
             const submitButton = form.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
 
-            // Disable button and show loading state
             submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Wird gesendet...';
 
             fetch(form.action, {
                 method: 'POST',
@@ -599,23 +594,21 @@
                 }
             })
             .then(response => {
-                // Re-enable button
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalButtonText;
 
                 if (response.ok) {
-                    // Show modal
                     const modal = document.getElementById('thankYouModal');
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
                 } else {
-                    alert('An error occurred while sending the form. Please try again.');
+                    alert('Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
                 }
             })
             .catch(error => {
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalButtonText;
-                alert('An error occurred while sending the form. Please try again.');
+                alert('Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
             });
         });
 
@@ -624,7 +617,6 @@
     <!-- Matomo -->
     <script>
       var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
