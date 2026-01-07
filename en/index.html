@@ -255,6 +255,12 @@
                 <h3 class="text-lg font-semibold text-ocean-primary mb-3">7. What is the session fee?</h3>
                 <p class="text-text-main leading-relaxed">The standard fee for individual sessions is CHF 140 for 60 minutes. This time includes the direct consultation period and necessary preparation and follow-up work.</p>
             </div>
+
+            <!-- Question 8 -->
+            <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">8. How does the process work after application?</h3>
+                <p class="text-text-main leading-relaxed">Your application reaches me confidentially. You will receive an email or call as soon as possible confirming receipt of your application and including my available times for our free introductory meeting. During this introductory meeting, you will receive more detailed information about the process.</p>
+            </div>
         </div>
     </section>
 
@@ -274,11 +280,42 @@
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="contact-email-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Email</label>
-                        <input id="contact-email-en" name="email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="name@email.com">
+                        <input id="contact-email-en" name="email" type="email" autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Optional">
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="contact-phone-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Phone</label>
-                        <input id="contact-phone-en" name="phone" type="tel" autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Optional">
+                        <input id="contact-phone-en" name="phone" type="tel" required autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="+41...">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-age-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Age Range</label>
+                        <select id="contact-age-en" name="age" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Please Select</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-30">25-30</option>
+                            <option value="31-40">31-40</option>
+                            <option value="41-50">41-50</option>
+                            <option value="51-60">51-60</option>
+                            <option value="61+">61+</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-language-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Session Language</label>
+                        <select id="contact-language-en" name="language" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Please Select</option>
+                            <option value="Turkish">Turkish</option>
+                            <option value="English">English</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-type-en" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Session Type</label>
+                        <select id="contact-type-en" name="session_type" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Please Select</option>
+                            <option value="Online">Online</option>
+                            <option value="In-Person">In-Person</option>
+                        </select>
                     </div>
 
                     <div class="flex flex-col gap-2">

@@ -262,6 +262,12 @@
                 <h3 class="text-lg font-semibold text-ocean-primary mb-3">7. Seans ücreti nedir?</h3>
                 <p class="text-text-main leading-relaxed">Bireysel seanslar için standart ücret 60 dakika için CHF 140'tır. Bu süre, doğrudan görüşme süresini ve gerekli hazırlık ve sonrası işlemleri içermektedir.</p>
             </div>
+
+            <!-- Soru 8 -->
+            <div class="bg-white/70 rounded-xl p-6 border border-ocean-primary/10 shadow-sm">
+                <h3 class="text-lg font-semibold text-ocean-primary mb-3">8. Başvuru sonrası süreç nasıl ilerliyor?</h3>
+                <p class="text-text-main leading-relaxed">Başvurunuz bana gizlilik içinde ulaşır. En kısa zamanda başvurunuzu aldığımı bildiren ve ücretsiz ön görüşmemiz için uygun zamanlarımı içeren bir e-posta veya arama alırsınız. Bu ön görüşmede sürece dair daha detaylı bilgi alırsınız.</p>
+            </div>
         </div>
     </section>
 
@@ -281,11 +287,42 @@
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="contact-email" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">E-posta</label>
-                        <input id="contact-email" name="email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="ornek@email.com">
+                        <input id="contact-email" name="email" type="email" autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Opsiyonel">
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="contact-phone" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Telefon</label>
-                        <input id="contact-phone" name="phone" type="tel" autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="Opsiyonel">
+                        <input id="contact-phone" name="phone" type="tel" required autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main" placeholder="+41...">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-age" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Yaş Aralığı</label>
+                        <select id="contact-age" name="age" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Seçiniz</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-30">25-30</option>
+                            <option value="31-40">31-40</option>
+                            <option value="41-50">41-50</option>
+                            <option value="51-60">51-60</option>
+                            <option value="61+">61+</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-language" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Görüşme Dili</label>
+                        <select id="contact-language" name="language" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Seçiniz</option>
+                            <option value="Türkçe">Türkçe</option>
+                            <option value="İngilizce">İngilizce</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="contact-type" class="text-xs font-semibold text-ocean-primary uppercase tracking-[0.2em]">Görüşme Türü</label>
+                        <select id="contact-type" name="session_type" required class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 focus:border-ocean-primary focus:ring-2 focus:ring-ocean-primary/30 bg-white text-text-main">
+                            <option value="">Seçiniz</option>
+                            <option value="Online">Online</option>
+                            <option value="Yüz Yüze">Yüz Yüze</option>
+                        </select>
                     </div>
 
                     <div class="flex flex-col gap-2">
